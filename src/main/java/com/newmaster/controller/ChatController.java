@@ -3,6 +3,7 @@ package com.newmaster.controller;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,6 +30,16 @@ public class ChatController {
 		response.setCharacterEncoding("UTF-8");
 		
 		return chatClient.prompt(query).stream().content();
+	}
+	
+	@GetMapping("/memory/chat")
+	public String memoryChat(
+			@RequestParam(value = "query", defaultValue = "你好，很高兴认识你，能简单介绍一下自己吗？") String query,
+			@RequestParam(value = "chat-id", defaultValue = "1") String chatId) {
+		return chatClient
+				.prompt(query)
+				.advisors(advisor -> advisor.param(ChatMemory.CONVERSATION_ID, chatId))
+				.call().content();
 	}
 }
 

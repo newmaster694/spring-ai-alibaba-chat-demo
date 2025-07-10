@@ -2,3 +2,8 @@ spring:
     ai:
         dashscope:
             api-key: "你的 阿里百炼api-key/open AI api-key"
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: "jdbc:mysql://localhost:3306/chat_memory?useSSL=false&serverTimezone=UTC"
+        username: "your-database-username"
+        password: "your-database-password"
