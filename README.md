@@ -1,8 +1,6 @@
-理解你的问题: doing
-收集相关的信息: doing
 # Spring AI Alibaba Demo 项目说明文档
 
-本项目是一个基于 **Spring Boot** 和 **Spring AI Alibaba** 构建的简单聊天助手应用，通过调用阿里云 DashScope 提供的 API 实现智能问答和流式对话功能。
+本项目是一个基于 **Spring Boot** 和 **Spring AI Alibaba** 构建的简单聊天助手应用，通过调用阿里云 百炼平台 提供的 API 实现智能问答和流式对话功能。
 
 ---
 
