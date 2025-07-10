@@ -1,0 +1,4 @@
+spring:
+    ai:
+        dashscope:
+            api-key: "你的 阿里百炼api-key/open AI api-key"
